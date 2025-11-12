@@ -16,11 +16,12 @@
   </header>
 
   <section class="form-container">
-    <form>
+    <!-- ✅ Correct Form Tag -->
+    <form action="https://formspree.io/f/xyzlyrwl" method="POST">
       <h2>Job Application</h2>
 
       <label>Job Reference Number:</label>
-      <select>
+      <select name="job_reference">
         <option>Select a job</option>
         <option>Web Developer</option>
         <option>Designer</option>
@@ -28,13 +29,13 @@
       </select>
 
       <label>First Name:</label>
-      <input type="text" required>
+      <input type="text" name="first_name" required>
 
       <label>Last Name:</label>
-      <input type="text" required>
+      <input type="text" name="last_name" required>
 
       <label>Date of Birth (dd/mm/yyyy):</label>
-      <input type="date" required>
+      <input type="date" name="dob" required>
 
       <label>Gender:</label>
       <div class="radio-group">
@@ -44,13 +45,13 @@
       </div>
 
       <label>Street Address:</label>
-      <input type="text">
+      <input type="text" name="address">
 
       <label>Suburb/Town:</label>
-      <input type="text">
+      <input type="text" name="town">
 
       <label>State:</label>
-      <select>
+      <select name="state">
         <option>Select</option>
         <option>Tamil Nadu</option>
         <option>Kerala</option>
@@ -58,26 +59,27 @@
       </select>
 
       <label>Postcode:</label>
-      <input type="text">
+      <input type="text" name="postcode">
 
       <label>Email Address:</label>
-      <input type="email" required>
+      <input type="email" name="email" required>
 
       <label>Phone Number:</label>
-      <input type="tel">
+      <input type="tel" name="phone">
 
       <label>Required Technical Skills:</label>
       <div class="checkbox-group">
-        <input type="checkbox" checked> HTML
-        <input type="checkbox"> CSS
-        <input type="checkbox"> JavaScript
-        <input type="checkbox"> Python
+        <input type="checkbox" name="skills" value="HTML" checked> HTML
+        <input type="checkbox" name="skills" value="CSS"> CSS
+        <input type="checkbox" name="skills" value="JavaScript"> JavaScript
+        <input type="checkbox" name="skills" value="Python"> Python
       </div>
 
       <label>Other Skills:</label>
-      <textarea></textarea>
+      <textarea name="other_skills"></textarea>
 
       <button type="submit">Apply</button>
+      <p class="note">After you click Apply, your form will be sent directly to our email!</p>
     </form>
   </section>
 
