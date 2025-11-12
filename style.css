@@ -1,129 +1,97 @@
-/* General Page Styles */
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  background-color: #f8f9fa;
+/* ===================== */
+/* JOB APPLICATION FORM  */
+/* ===================== */
+.form-container {
+  background-color: #ffffff;
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 30px 40px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.form-container h2 {
+  text-align: center;
+  color: #007bff;
+  margin-bottom: 25px;
+  font-size: 1.6rem;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  margin-top: 15px;
+  margin-bottom: 5px;
+  font-weight: bold;
   color: #333;
 }
 
-/* Header */
-header {
+input,
+select,
+textarea {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+  transition: all 0.2s ease;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 4px rgba(0, 123, 255, 0.4);
+  outline: none;
+}
+
+.radio-group,
+.checkbox-group {
+  display: flex;
+  gap: 15px;
+  margin-top: 8px;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+button {
   background-color: #007bff;
   color: white;
-  padding: 1.2rem 0;
+  border: none;
+  padding: 12px;
+  border-radius: 6px;
+  margin-top: 25px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+.note {
+  margin-top: 15px;
+  font-size: 0.9rem;
+  color: #555;
   text-align: center;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
-header h1 {
-  margin: 0;
-  font-size: 2rem;
-}
+/* Responsive Design */
+@media (max-width: 600px) {
+  .form-container {
+    padding: 20px;
+    width: 90%;
+  }
 
-nav {
-  margin-top: 0.5rem;
-}
-
-nav a {
-  color: white;
-  margin: 0 15px;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-nav a:hover {
-  text-decoration: underline;
-}
-
-/* Mission Section */
-.mission {
-  text-align: center;
-  padding: 2.5rem 1rem;
-  background-color: #ffffff;
-  margin: 2rem auto;
-  width: 85%;
-  border-radius: 10px;
-  box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
-}
-
-.mission h2 {
-  color: #007bff;
-  margin-bottom: 1rem;
-}
-
-.teamwork-gif {
-  width: 300px;
-  display: block;
-  margin: 20px auto;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.2);
-}
-
-/* Team Section */
-#team {
-  text-align: center;
-  padding: 3rem 1rem;
-  background-color: #e9f3ff;
-}
-
-#team h2 {
-  color: #007bff;
-  margin-bottom: 2rem;
-}
-
-.team-container {
-  display: flex;
-  justify-content: center;
-  gap: 2rem;
-  flex-wrap: wrap;
-}
-
-.team-member {
-  background-color: white;
-  border-radius: 10px;
-  padding: 1rem;
-  width: 250px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-.team-member img {
-  width: 100%;
-  height: 200px;
-  border-radius: 10px;
-  object-fit: cover;
-}
-
-.team-member h3 {
-  margin: 10px 0 5px;
-  color: #333;
-}
-
-.team-member p {
-  color: #666;
-  font-size: 0.95rem;
-}
-
-/* Contact Section */
-#contact {
-  text-align: center;
-  padding: 2rem 1rem;
-  background-color: #fff;
-}
-
-#contact a {
-  color: #007bff;
-  text-decoration: none;
-}
-
-#contact a:hover {
-  text-decoration: underline;
-}
-
-/* Footer */
-footer {
-  background-color: #333;
-  color: white;
-  text-align: center;
-  padding: 1rem;
-  margin-top: 2rem;
+  input,
+  select,
+  textarea {
+    font-size: 0.95rem;
+  }
 }
