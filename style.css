@@ -1,37 +1,193 @@
-/* ===== Form Container ===== */
+/* ===== GLOBAL VARIABLES ===== */
+:root {
+  --primary: #007bff;
+  --muted: #666;
+  --bg: #f8f9fa;
+  --card-bg: #fff;
+}
+
+/* ===== GLOBAL PAGE STYLES ===== */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Roboto, Arial, sans-serif;
+  color: #222;
+  background: var(--bg);
+  line-height: 1.5;
+}
+
+/* ===== HEADER ===== */
+header {
+  background: var(--primary);
+  color: #fff;
+  padding: 18px 10px;
+  text-align: center;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+}
+
+header h1 {
+  margin: 0;
+  font-size: 1.8rem;
+}
+
+nav {
+  margin-top: 8px;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 12px;
+  font-weight: 600;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+/* ===== HERO SECTION ===== */
+.hero {
+  text-align: center;
+  background: linear-gradient(to bottom right, #e9f3ff, #ffffff);
+  padding: 60px 20px;
+  border-radius: 12px;
+  width: 90%;
+  margin: 40px auto;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.hero-image {
+  width: 280px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  margin-bottom: 20px;
+}
+
+.hero h2 {
+  font-size: 1.8rem;
+  color: var(--primary);
+  margin-bottom: 10px;
+}
+
+.hero p {
+  font-size: 1rem;
+  color: #555;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* ===== MISSION SECTION ===== */
+.mission {
+  text-align: center;
+  width: 80%;
+  margin: 60px auto;
+}
+
+.mission h2 {
+  color: var(--primary);
+  font-size: 1.6rem;
+  margin-bottom: 15px;
+}
+
+/* ===== TEAM SECTION ===== */
+#team {
+  background: #f1f6ff;
+  padding: 60px 0;
+  text-align: center;
+}
+
+#team h2 {
+  color: var(--primary);
+  margin-bottom: 35px;
+  font-size: 1.6rem;
+}
+
+.team-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+.team-member {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  width: 250px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease;
+}
+
+.team-member:hover {
+  transform: translateY(-5px);
+}
+
+.team-member img {
+  width: 100%;
+  height: 200px;
+  border-radius: 10px;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+.team-member h3 {
+  margin: 10px 0 5px;
+}
+
+.team-member p {
+  color: #555;
+  font-size: 0.95rem;
+}
+
+/* ===== CONTACT SECTION ===== */
+#contact {
+  text-align: center;
+  margin: 60px auto;
+}
+
+#contact h2 {
+  color: var(--primary);
+}
+
+#contact a {
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+#contact a:hover {
+  text-decoration: underline;
+}
+
+/* ===== FORM PAGE ===== */
 .form-container {
   width: 100%;
   max-width: 700px;
   background: var(--card-bg);
   border-radius: 10px;
   padding: 32px 40px;
+  margin: 60px auto;
   box-shadow: 0 6px 20px rgba(0,0,0,0.06);
 }
 
-/* Form heading */
 .form-container h2 {
-  margin: 0 0 25px;
   text-align: center;
   color: var(--primary);
-  font-size: 1.6rem;
-  letter-spacing: 0.5px;
+  margin-bottom: 25px;
 }
 
-/* Make every label block-level (one per line) */
+/* Inputs and labels */
 label {
   display: block;
-  margin-top: 18px;
-  margin-bottom: 6px;
+  margin-top: 15px;
   font-weight: 600;
   color: #222;
-  font-size: 1rem;
 }
 
-/* Inputs, selects, textarea one per line */
-input[type="text"],
-input[type="email"],
-input[type="tel"],
-input[type="date"],
+input,
 select,
 textarea {
   width: 100%;
@@ -40,37 +196,31 @@ textarea {
   border-radius: 8px;
   font-size: 1rem;
   background: #fff;
-  transition: box-shadow .15s, border-color .15s;
-  display: block;
-  margin-bottom: 6px;
+  margin-top: 5px;
+  transition: border-color .2s, box-shadow .2s;
 }
 
-input:focus, select:focus, textarea:focus {
+input:focus,
+select:focus,
+textarea:focus {
   border-color: var(--primary);
-  box-shadow: 0 0 0 4px rgba(0,123,255,0.08);
+  box-shadow: 0 0 0 4px rgba(0,123,255,0.1);
   outline: none;
 }
 
-/* Gender and skills groups appear on new line neatly */
+/* Radio & Checkbox groups */
 .field-group {
   border: none;
   padding: 0;
-  margin-top: 18px;
+  margin-top: 20px;
 }
 
-.field-group legend {
-  font-weight: 600;
-  margin-bottom: 8px;
-  display: block;
-  color: #222;
-}
-
-/* Gender & Skill options arranged neatly below each label */
-.radio-group, 
+.radio-group,
 .checkbox-group {
   display: flex;
-  flex-direction: column;  /* stacked vertically */
+  flex-direction: column;
   gap: 8px;
+  margin-top: 8px;
 }
 
 .inline {
@@ -81,46 +231,63 @@ input:focus, select:focus, textarea:focus {
   color: #444;
 }
 
-/* Submit button styling */
+/* Submit Button */
 .submit-row {
   display: flex;
   justify-content: center;
-  margin-top: 30px;
+  margin-top: 25px;
 }
 
-button[type="submit"] {
+button {
   background: var(--primary);
   color: #fff;
   border: none;
   padding: 12px 28px;
-  font-size: 1rem;
   border-radius: 8px;
+  font-size: 1rem;
   cursor: pointer;
   box-shadow: 0 6px 18px rgba(0,123,255,0.15);
   transition: all 0.3s ease;
 }
-button[type="submit"]:hover {
+
+button:hover {
   background: #0056b3;
   transform: translateY(-2px);
 }
 
-/* Note text */
 .note {
-  margin-top: 18px;
-  color: var(--muted);
+  margin-top: 15px;
   text-align: center;
-  font-size: 0.95rem;
+  color: var(--muted);
 }
 
-/* Responsive tweaks */
+/* ===== FOOTER ===== */
+footer {
+  background: #2f2f2f;
+  color: #fff;
+  padding: 16px 8px;
+  text-align: center;
+  margin-top: 50px;
+}
+
+/* ===== RESPONSIVE ===== */
 @media (max-width: 640px) {
+  header h1 {
+    font-size: 1.4rem;
+  }
+
+  .hero-image {
+    width: 200px;
+  }
+
   .form-container {
     padding: 20px;
+    margin: 30px auto;
   }
-  input, select, textarea {
+
+  input,
+  select,
+  textarea {
     font-size: 0.95rem;
-  }
-  .radio-group, .checkbox-group {
-    gap: 6px;
   }
 }
