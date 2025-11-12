@@ -1,79 +1,33 @@
-/* ===== Global page styles ===== */
-:root {
-  --primary: #007bff;
-  --muted: #666;
-  --bg: #f8f9fa;
-  --card-bg: #fff;
-}
-
-* { box-sizing: border-box; }
-body {
-  margin: 0;
-  font-family: "Segoe UI", Roboto, Arial, sans-serif;
-  color: #222;
-  background: var(--bg);
-  line-height: 1.45;
-}
-
-/* Header */
-header {
-  background: var(--primary);
-  color: #fff;
-  padding: 18px 10px;
-  text-align: center;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
-}
-header h1 { margin: 0; font-size: 1.8rem; }
-nav { margin-top: 8px; }
-nav a { color: #fff; text-decoration: none; margin: 0 12px; font-weight: 600; }
-nav a:hover { text-decoration: underline; }
-
-/* Main container */
-main {
-  padding: 24px 12px 60px;
-  display: flex;
-  justify-content: center;
-}
-
-/* ===== Form container ===== */
+/* ===== Form Container ===== */
 .form-container {
   width: 100%;
   max-width: 700px;
   background: var(--card-bg);
   border-radius: 10px;
-  padding: 28px;
+  padding: 32px 40px;
   box-shadow: 0 6px 20px rgba(0,0,0,0.06);
 }
 
 /* Form heading */
 .form-container h2 {
-  margin: 0 0 20px;
+  margin: 0 0 25px;
   text-align: center;
   color: var(--primary);
-  font-size: 1.4rem;
+  font-size: 1.6rem;
+  letter-spacing: 0.5px;
 }
 
-/* Make every label on its own line and inputs full width */
+/* Make every label block-level (one per line) */
 label {
   display: block;
-  margin-top: 12px;
+  margin-top: 18px;
   margin-bottom: 6px;
   font-weight: 600;
   color: #222;
+  font-size: 1rem;
 }
 
-/* Fieldset with legend style */
-.field-group {
-  border: none;
-  padding: 0;
-  margin-top: 12px;
-}
-.field-group legend { display:none; } /* legend not required visually */
-
-/* Inline labels for checkboxes/radios */
-.inline { margin-right: 12px; font-weight: 500; }
-
-/* Inputs, selects, textarea */
+/* Inputs, selects, textarea one per line */
 input[type="text"],
 input[type="email"],
 input[type="tel"],
@@ -87,57 +41,86 @@ textarea {
   font-size: 1rem;
   background: #fff;
   transition: box-shadow .15s, border-color .15s;
+  display: block;
+  margin-bottom: 6px;
 }
+
 input:focus, select:focus, textarea:focus {
   border-color: var(--primary);
   box-shadow: 0 0 0 4px rgba(0,123,255,0.08);
   outline: none;
 }
 
-/* Make checkbox and radio controls slightly larger and aligned */
-input[type="checkbox"], input[type="radio"] {
-  transform: scale(1);
-  margin-right: 6px;
-  vertical-align: middle;
+/* Gender and skills groups appear on new line neatly */
+.field-group {
+  border: none;
+  padding: 0;
+  margin-top: 18px;
 }
 
-/* Submit row centers button */
+.field-group legend {
+  font-weight: 600;
+  margin-bottom: 8px;
+  display: block;
+  color: #222;
+}
+
+/* Gender & Skill options arranged neatly below each label */
+.radio-group, 
+.checkbox-group {
+  display: flex;
+  flex-direction: column;  /* stacked vertically */
+  gap: 8px;
+}
+
+.inline {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 500;
+  color: #444;
+}
+
+/* Submit button styling */
 .submit-row {
   display: flex;
   justify-content: center;
-  margin-top: 22px;
+  margin-top: 30px;
 }
+
 button[type="submit"] {
   background: var(--primary);
   color: #fff;
   border: none;
-  padding: 12px 26px;
+  padding: 12px 28px;
   font-size: 1rem;
   border-radius: 8px;
   cursor: pointer;
-  box-shadow: 0 6px 18px rgba(0,123,255,0.12);
+  box-shadow: 0 6px 18px rgba(0,123,255,0.15);
+  transition: all 0.3s ease;
 }
-button[type="submit"]:hover { background: #0056b3; }
+button[type="submit"]:hover {
+  background: #0056b3;
+  transform: translateY(-2px);
+}
 
-/* Small note text */
+/* Note text */
 .note {
-  margin-top: 16px;
+  margin-top: 18px;
   color: var(--muted);
   text-align: center;
+  font-size: 0.95rem;
 }
 
-/* Footer */
-footer {
-  background: #2f2f2f;
-  color: #fff;
-  padding: 14px 8px;
-  text-align: center;
-  margin-top: 30px;
-}
-
-/* ===== Responsive tweaks ===== */
+/* Responsive tweaks */
 @media (max-width: 640px) {
-  header h1 { font-size: 1.4rem; }
-  .form-container { padding: 18px; }
-  input, select, textarea { font-size: 0.95rem; }
+  .form-container {
+    padding: 20px;
+  }
+  input, select, textarea {
+    font-size: 0.95rem;
+  }
+  .radio-group, .checkbox-group {
+    gap: 6px;
+  }
 }
